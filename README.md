@@ -45,8 +45,9 @@ Modify the global variables at the top of the script. Use at your own risk.
 Decorators which automate some things about docstrings and function annotations. They
 dynamically modify the function's `__doc__` and `__annotations__` attributes, so static
 code analyzers unfortunately won't reflect the modifications. After using these
-decorates, I realized that I rely a lot on the docstrings that static code analyzers
-show me. I assume other users do to. So I don't intend on using these decorators.
+decorators, I realized that I rely a lot on the docstrings that static code analyzers
+show me. I assume other users do to. So I opted for copy-pasting parts of docstrings
+instead of using these automations.
 </details>
 
 
