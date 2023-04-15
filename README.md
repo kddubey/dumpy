@@ -9,10 +9,7 @@ Dump of dumb Python code which was once useful.
 it are:
   1. It's a bit nontrivial to quickly update docs during bigger code refactors
   2. There are a lot of little steps which I'll forget when setting up docs for future
-     projects. And many tutorials on the internet can overwhelm you with options which
-     don't matter for most Python packages. (I ended up finding [this YouTube
-     tutorial](https://www.youtube.com/watch?v=BWIrhgCAae0) to be the most
-     time-efficient.)
+     projects
   3. I don't like some of the default features.
 
 So I wrote this script which automatically sets up documentation in a style that's to my
