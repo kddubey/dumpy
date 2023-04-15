@@ -5,9 +5,9 @@ Dump of dumb Python code which was once useful.
 <details>
 <summary>sphinx_setup.py</summary>
 
-Sphinx is super awesome. My only problems with Sphinx are:
-  1. It's a bit nontrivial to quickly iterate docs during big refactors (common for me
-     during early stages of development)
+[Sphinx](https://www.sphinx-doc.org/en/master/) is super awesome. My only problems with
+it are:
+  1. It's a bit nontrivial to quickly update docs during bigger code refactors
   2. There are a lot of little steps which I'll forget when setting up docs for future
      projects. And many tutorials on the internet can overwhelm you with options which
      don't matter for most Python packages. (I ended up finding [this YouTube
