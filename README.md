@@ -5,14 +5,9 @@ Dump of dumb Python code which was once useful.
 <details>
 <summary>sphinx_setup.py</summary>
 
-[Sphinx](https://www.sphinx-doc.org/en/master/) is super awesome. My only problems with
-it are:
-  1. It's a bit nontrivial to quickly update docs during bigger code refactors
-  2. There are a lot of little steps which I'll forget when setting up docs for future
-     projects
-  3. I don't like some of the default features.
+[Sphinx](https://www.sphinx-doc.org/en/master/) is super awesome.
 
-So I wrote this script which automatically sets up documentation in a style that's to my
+I wrote this script which automatically sets up documentation in a style that's to my
 liking. My preferences are:
   * Separate source and build directories, because this structure is the one which the
     Read the Docs builder
