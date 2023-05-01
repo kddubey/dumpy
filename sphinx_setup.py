@@ -10,19 +10,39 @@ import os
 from pathlib import Path
 import subprocess
 
-PACKAGE_NAME = 'cappr'  ## assumed to be the same as the repo name
+REPO_NAME = 'cappr'
+PACKAGE_NAME = 'cappr'
 PROJECT_NAME = 'CAPPr'
 AUTHOR_NAME = 'kddubey'
 VERSION = '1.0'
+PACKAGE_DESC = r'''
+Perform zero-shot text classification based on the following idea: for a given prompt 
+and completion text pair, what's the probability that the completion comes after the 
+prompt? Hence the name:
+
+   | **C**\ompletion
+   | **A**\fter
+   | **P**\rompt
+   | **Pr**\obability
+
+The method is fleshed out in my `question on CrossValidated`_.
+
+.. _question on CrossValidated: https://stats.stackexchange.com/q/601159/337906
+'''
+
 ## can set this to pass (indented!)
 CONF_SETUP_FUNC_BODY = '''
     pass
 '''.lstrip('\n')
-CONF_LINK_CODE_RESOLVE = r'''
+CONF_LINK_CODE_RESOLVE = (r'''
 def linkcode_resolve(domain, info):
     import importlib
     import inspect
-    code_url = "https://github.com/kddubey/cappr/blob/main"
+''' +
+f'''
+    code_url = "https://github.com/kddubey/{REPO_NAME}/blob/main"
+''' +
+r'''
     ## ty https://github.com/readthedocs/sphinx-autoapi/issues/202#issuecomment-907582382
     if domain != 'py':
         return
@@ -58,25 +78,10 @@ def linkcode_resolve(domain, info):
 
     file = file.lstrip('../')
     return f"{code_url}/{file}#L{start}-L{end}"
-'''
-
-PACKAGE_DESC = r'''
-Perform zero-shot text classification based on the following idea: for a given prompt 
-and completion text pair, what's the probability that the completion comes after the 
-prompt? Hence the name:
-
-   | **C**\ompletion
-   | **A**\fter
-   | **P**\rompt
-   | **Pr**\obability
-
-The method is fleshed out in my `question on CrossValidated`_.
-
-.. _question on CrossValidated: https://stats.stackexchange.com/q/601159/337906
-'''
+''')
 
 
-assert os.curdir == PACKAGE_NAME, "Put this script in the same directory as the repo"
+assert os.curdir == REPO_NAME, "Put this script in the same directory as the repo"
 
 os.mkdir('docs')
 os.chdir('docs')
@@ -90,7 +95,7 @@ subprocess.run(['sphinx-quickstart', '-q', '--sep',
 os.chdir('..')
 subprocess.run(['sphinx-apidoc', '-M', '-e',
                 '-o', os.path.join('docs', 'source'),
-                PACKAGE_NAME])
+                REPO_NAME])
 
 
 ## Clean rsts: the Submodule and Subpackage headers are not useful, and neither are
@@ -153,7 +158,7 @@ sys.path.insert(0, os.path.abspath(os.path.join("..", "..", "src")))
 extensions_str = 'extensions = ["sphinx.ext.linkcode", "sphinx.ext.napoleon", "sphinx.ext.autosectionlabel", ""sphinx_togglebutton""]'
 html_theme_str = 'html_theme = "pydata_sphinx_theme"'
 html_css_files_str = 'html_css_files = [os.path.join("css", "custom.css")]'
-html_context_str = 'html_context = {"display_github": True, "github_user": "kddubey", "github_repo": "%s", "github_version": "main", "doc_path": "docs/source", "default_mode": "light"}' % PACKAGE_NAME
+html_context_str = 'html_context = {"display_github": True, "github_user": "kddubey", "github_repo": "%s", "github_version": "main", "doc_path": "docs/source", "default_mode": "light"}' % REPO_NAME
 setup_str = f'''
 def setup(self):
 {CONF_SETUP_FUNC_BODY}
