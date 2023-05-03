@@ -10,8 +10,8 @@ documentation in a style that's to my liking. My preferences are:
   * Separate source and build directories, because this structure is the one which the
     Read the Docs builder
     [assumes](https://docs.readthedocs.io/en/stable/tutorial/#preparing-your-project-on-github)
-  * No "Submodule ...", "Subpackage ...", "  module", and " package" headers, as these
-    distinctions shouldn't matter to the user
+  * No "Submodule ...", "Subpackage ...", "...  module", and "... package" headers, as
+    these distinctions shouldn't matter to the user
   * The code `[source]` button should link to the code in GitHub
       * I'm surprised at how much Googling (and some slightly unsuccessful ChatGPT-ing)
         I had to do to find a robust but bit-sized implementation of this. Big thanks to
