@@ -1,7 +1,5 @@
 """
-LOOK AWAY! I don't really know what I'm doing lmao
-
-This is an *extremely* janky script which prepares everything needed to run `make html`.
+This is an extremely janky script which prepares everything needed to run `make html`.
 If modules are added, refactored, etc. then delete the docs dir and run this script.
 I also wanted to document this process somewhere in case I need it for a new project.
 """
